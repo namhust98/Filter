@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#111"
+	android:orientation="vertical">
+
+	<RelativeLayout
+		android:id="@+id/title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:gravity="center">
+
+		<LinearLayout
+			android:id="@+id/openVideo_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="120dp"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:src="@drawable/ic_camera" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="Camera"
+				android:textColor="#aaa"
+				android:textSize="24sp"
+				android:textStyle="bold" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/chooseVideo_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="48dp"
+			android:layout_marginTop="120dp"
+			android:layout_toEndOf="@+id/openVideo_title"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:src="@drawable/ic_choose" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="Library"
+				android:textColor="#aaa"
+				android:textSize="24sp"
+				android:textStyle="bold" />
+		</LinearLayout>
+	</RelativeLayout>
+
+	<LinearLayout
+		android:id="@+id/mainvideo"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:visibility="gone">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="250dp"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:background="#000">
+
+			<com.example.filter.Video.MovieWrapperView
+				android:id="@+id/layout_movie_wrapper"
+				android:layout_width="match_parent"
+				android:layout_height="250dp"
+				android:layout_centerInParent="true" />
+
+			<View
+				android:id="@+id/videoview"
+				android:layout_width="match_parent"
+				android:layout_height="200dp"
+				android:layout_centerInParent="true"/>
+
+			<ImageView
+				android:id="@+id/imageplay"
+				android:layout_width="60dp"
+				android:layout_height="60dp"
+				android:layout_centerInParent="true"
+				android:src="@drawable/ic_playvideo"
+				android:visibility="gone" />
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_toLeftOf="@+id/btnfullvideo"
+					android:id="@+id/btnsave"
+					android:src="@drawable/ic_save"
+					android:layout_margin="4dp"/>
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:id="@+id/btnfullvideo"
+					android:layout_alignParentRight="true"
+					android:src="@drawable/ic_fullvideo"
+					android:layout_margin="4dp"/>
+
+				<SeekBar
+					android:id="@+id/seekBar"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_marginBottom="4dp"
+					android:layout_marginRight="70dp"/>
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Filter"
+			android:textColor="#fff"
+			android:textStyle="bold"
+			android:textSize="24sp"
+			android:layout_gravity="center"/>
+
+		<ListView
+			android:id="@+id/list"
+			android:layout_width="match_parent"
+			android:layout_marginTop="4dp"
+			android:background="#000"
+			android:layout_height="160dp" />
+
+		<LinearLayout
+			android:id="@+id/progressBar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8sp"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<ProgressBar
+				android:layout_width="30dp"
+				android:layout_height="30dp" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Please wait ..."
+				android:textColor="#fff" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

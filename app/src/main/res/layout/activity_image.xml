@@ -1,0 +1,266 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/main_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#111"
+	android:orientation="vertical"
+	tools:context=".MainActivity">
+
+	<RelativeLayout
+		android:id="@+id/title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:gravity="center">
+
+		<LinearLayout
+			android:id="@+id/openCamera_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="120dp"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:src="@drawable/ic_camera" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="Camera"
+				android:textColor="#aaa"
+				android:textSize="24sp"
+				android:textStyle="bold" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/chooseImage_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="48dp"
+			android:layout_marginTop="120dp"
+			android:layout_toEndOf="@+id/openCamera_title"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="80dp"
+				android:layout_height="80dp"
+				android:src="@drawable/ic_choose" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="Library"
+				android:textColor="#aaa"
+				android:textSize="24sp"
+				android:textStyle="bold" />
+		</LinearLayout>
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/myImage"
+		android:layout_width="340dp"
+		android:layout_height="340dp"
+		android:layout_gravity="center"
+		android:layout_marginTop="8dp"
+		android:background="#111"
+		android:visibility="gone">
+
+		<com.example.filter.Image.sticker.StickerView
+			android:id="@+id/stickerview"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:background="#111">
+
+			<ImageView
+				android:id="@+id/place_holder_imageview"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center"
+				android:background="#111" />
+		</com.example.filter.Image.sticker.StickerView>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:background="#000"
+			android:orientation="horizontal"
+			android:padding="4dp">
+
+			<LinearLayout
+				android:id="@+id/removeSticker"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="4dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:background="@drawable/ic_removesticker" />
+
+				<TextView
+					android:layout_width="25dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="Remove Sticker"
+					android:textColor="#fff"
+					android:textSize="6sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/resetDefault"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="8dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:background="@drawable/ic_default" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="Default"
+					android:textColor="#fff"
+					android:textSize="8sp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:src="@drawable/ic_rotateleft"
+				android:id="@+id/rotateleft"
+				android:background="#000"/>
+
+			<View
+				android:layout_width="8dp"
+				android:layout_height="30dp"
+				android:background="#000" />
+
+			<ImageView
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:src="@drawable/ic_rotateright"
+				android:id="@+id/rotateright"
+				android:background="#000"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="true"
+			android:background="#000"
+			android:orientation="horizontal"
+			android:padding="4dp">
+
+			<LinearLayout
+				android:id="@+id/saveImage"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:background="@drawable/ic_save" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="Save"
+					android:textColor="#fff"
+					android:textSize="8sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/cropImage"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="8dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:background="@drawable/ic_crop" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="Crop"
+					android:textColor="#fff"
+					android:textSize="8sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/fullImage"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="8dp"
+				android:layout_gravity="center"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:layout_gravity="center"
+					android:background="@drawable/ic_fullvideo" />
+
+				<TextView
+					android:layout_width="25dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="Full Screen"
+					android:gravity="center"
+					android:textColor="#fff"
+					android:textSize="6sp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+	<com.google.android.material.tabs.TabLayout
+		android:id="@+id/myTabLayout"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:layout_marginTop="8dp"
+		android:background="#000"
+		android:visibility="gone"
+		app:tabTextColor="#fff">
+
+	</com.google.android.material.tabs.TabLayout>
+
+	<androidx.viewpager.widget.ViewPager
+		android:id="@+id/myViewPager"
+		android:layout_width="match_parent"
+		android:layout_height="120dp"
+		android:visibility="gone">
+
+	</androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>
